@@ -18,6 +18,11 @@ public class Whileloop{
 			System.out.println("Even number is " + number);
 		}
 	}
+	// create a method called is Evennunber that tajkes a aparameter of type int
+	// its purpose is to determinent if the argument passes to the method is
+	// an even number or not
+	// return true if an even number , otherwise return false
+
 	public static boolean isEvenNumber(int number){
 		if(number % 2 == 0){
 			return true;
