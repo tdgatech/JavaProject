@@ -10,6 +10,13 @@ public class Whileloop{
 				System.out.println("Even number is " + number);
 			}
 		}
+		System.out.println();		
+		for(number = 1; number <= finish ; number++){
+			if(!isEvenNumber(number)){
+				continue;
+			}
+			System.out.println("Even number is " + number);
+		}
 	}
 	public static boolean isEvenNumber(int number){
 		if(number % 2 == 0){
