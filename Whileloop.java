@@ -13,17 +13,15 @@ public class Whileloop{
 			if(!isEvenNumber(number)){
 				continue;
 			}		
-			
 			System.out.println("Even number is " + number);
 			totalsum += number;
 			count++;
 			if(count >= 5){
 				break;
-			}
-			
+			}			
 		}
-		System.out.println(count);
-		System.out.println(totalsum);
+		//System.out.println(count);
+		System.out.println("The total sum of 5 evene number found are: "+ totalsum);
 		//System.out.println();		
 		// for(number = 1; number <= finish ; number++){
 		// 	if(!isEvenNumber(number)){
@@ -36,7 +34,6 @@ public class Whileloop{
 	// its purpose is to determinent if the argument passes to the method is
 	// an even number or not
 	// return true if an even number , otherwise return false
-
 	public static boolean isEvenNumber(int number){
 		if(number % 2 == 0){
 			return true;
