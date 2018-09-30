@@ -1,3 +1,7 @@
+// Modify the while code
+// Make it also record the total number of even number it has 
+// and break once 5 are found 
+// and at the end , display the total number of even nunber found
 public class Whileloop{
 	public static void main(String[]args){
 		int number = 1;
