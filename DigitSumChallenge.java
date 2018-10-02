@@ -9,10 +9,26 @@
 // 		use n = n/10 to discard the least-significant digit
 //		the methos need to be static like other methods so far in tyhis course
 
-
 public class DigitSumChallenge{
+	private static int sumDigits(int number){
+		if (number < 10){
+			return -1;
+		}
+		// 125/10 = 12 mod 5
+		//	12/10 = 1 mod 2
+		// 1/10 = 0 mod 1 
+		// sumDigit = 5 + 2 + 1
+		// stop when number = 0		
+		int sumDigit = 0;
+		while (number > 0){
+			sumDigit += (number % 10);
+			number /= 10;
+		}
+		return sumDigit;
+	}
 	public static void main (String[] args){
-
+		int result = sumDigits(125);
+		System.out.println("The sum digit of 125 is " + result);
 	}
 
 }
