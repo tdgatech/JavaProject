@@ -1,5 +1,5 @@
 public class LastDigitChecker {
-    public static boolean hasSameLastDigit(int num1, int num2, int num3){
+    private static boolean hasSameLastDigit(int num1, int num2, int num3){
         if(num1<10 || 1000<num1){
             return false;
         }else if(num2<10 || 1000<num2){
