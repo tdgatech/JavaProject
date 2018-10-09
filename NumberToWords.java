@@ -4,33 +4,29 @@ public class NumberToWords{
 	public static void numberToWords(int number1){
 		if(number1 < 0){
 			System.out.println("Invalid Value");
-		}
-		String[] words = {"","one","two","three","four","five","six","seven","eight","nine"};
-		while(number1 > 0){
-			int transfer = number1 % 10;
-			if(transfer == 0){
-				System.out.println("zero");
-			}else{
-				System.out.println(words[transfer]);
-			}
-			number1/=10;
-
-
-		}
-
+		}else{
+			String[] words = {"","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+			String numberToString = Integer.toString(number1);//convert int to string
+			System.out.println(numberToString);//test this is String
+			for (int i = 0; i <= (numberToString.length()-1);i++){
+				char num = numberToString.charAt(i);//String to char
+				int numToInt = (int)(num - '0');//char to int by minus 49 is sci of 0
+				//System.out.println(numToInt);//test
+				if(numToInt%10 != 0){
+					System.out.println(words[numToInt%10]);	
+				}else if(numToInt%10 ==0){
+					System.out.println("Zero");
+				}		
+			}		
+		}		
+		
 	}
 	public static int reverse(int number2){
-		//String[] words = {"","one","two","three","four","five","six","seven","eight","nine"};			
 		if(number2 < 0){			
 			int absolute = Math.abs(number2);
 			int sum = 0;						
 			while(absolute > 0){
-				int reverse1 = absolute % 10;
-				// if(reverse1==0){
-				// 	System.out.println("zero");
-				// }else{
-				// 	System.out.println(words[reverse1]);
-				// }				
+				int reverse1 = absolute % 10;							
 				sum = sum*10 + reverse1 ;
 				absolute/=10;			
 			}
@@ -39,12 +35,7 @@ public class NumberToWords{
 		}else{
 			int sum = 0;
 			while (number2 > 0 ){
-				int reverse2 = number2 % 10;
-				// if(reverse2 == 0){
-				// 	System.out.println("zero");
-				// }else{
-				// 	System.out.println(words[reverse2]);
-				// }				
+				int reverse2 = number2 % 10;								
 				sum = sum*10 + reverse2;
 				number2/=10;
 			}
@@ -52,23 +43,24 @@ public class NumberToWords{
 		}						
 	}
 	public static int getDigitCount(int number3){
+		
+		int count = 0;
 		if (number3 < 0){
 			return -1;
-		}
-		int count = 0;
-		while(number3 > 0){
+		}else if(number3 == 0){
+			count+=1;
+		}else{			
+			while(number3 > 0){
 			count+=1;
 			number3/=10;
-		}
-		return count;
-
+			}			
+		}return count;		
 	}
-
 	public static void main (String[] args){
-		numberToWords(1000);
+		numberToWords(-3);
 		int reverse = reverse(-121);
 		System.out.println(reverse);
-		int getDigit = getDigitCount(5200);
+		int getDigit = getDigitCount(0);
 		System.out.println("Number of digits are: " + getDigit);
 	}
 }
